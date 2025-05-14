@@ -10,7 +10,7 @@ saludos = session.query(Saludo2).all()
 
 st.title("Presentación de todos los Saludos")
 
-for saludo  in saludos:
+for saludo in saludos:
     st.write(saludo)
     st.markdown("---")
 
@@ -19,7 +19,7 @@ st.title("Presentación de todos los Saludos en Tabla")
 lista = []
 
 for s in saludos:
-    diccionario = {"id": s.id, "mensaje": s.mensaje, "tipo": s.tipo}
+    diccionario = {"id": s.id, "mensaje": s.mensaje, "tipo": s.tipo, "origen": s.origen}
     lista.append(diccionario)
 
 st.dataframe(lista)

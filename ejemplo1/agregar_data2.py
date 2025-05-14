@@ -7,7 +7,7 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 with open("data/saludos_mundo.csv", "r") as archivo:
-    csv = DictReader(archivo)
+    csv = DictReader(archivo, delimiter='|')
     for fila in csv:
         miSaludo = Saludo2()
         miSaludo.mensaje = fila["mensaje"]
